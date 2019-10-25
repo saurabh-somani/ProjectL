@@ -7,6 +7,9 @@
         .auto-style2 {
             width: 106px;
         }
+        .auto-style3 {
+            width: 150px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
@@ -15,23 +18,25 @@
     <table class="auto-style1">
         <tr>
             <td class="auto-style2">Username:</td>
-            <td>
-                <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <td class="auto-style3">
+                <asp:TextBox ID="TextBox1" runat="server" Width="150px"></asp:TextBox>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Username Required" Display="Dynamic" ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
             <td class="auto-style2">Password:</td>
-            <td>
-                <asp:TextBox ID="TextBox2" runat="server" TextMode="Password"></asp:TextBox>
+            <td class="auto-style3">
+                <asp:TextBox ID="TextBox2" runat="server" TextMode="Password" Width="149px"></asp:TextBox>
             </td>
             <td>
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="TextBox2" ErrorMessage="Password Required" Display="Dynamic" ForeColor="Red">*</asp:RequiredFieldValidator>
             </td>
         </tr>
     </table>
     <br />
     <asp:Button ID="Button1" runat="server" Text="Button" />
+    <br />
+    <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" ForeColor="Red" />
 </asp:Content>
