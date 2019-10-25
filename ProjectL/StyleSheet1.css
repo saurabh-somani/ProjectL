@@ -1,0 +1,64 @@
+﻿html, body, form
+{
+    margin: 0;
+}
+
+#CenterContent
+{
+    margin: 0;
+    padding: 0;
+}
+
+#form1
+{
+    
+}
+
+.Header
+{
+    color: white;
+    top: 0;
+    height: 60px;
+    text-align: center;
+    border: solid; border-width: 1px;
+    background-color: tomato;
+}
+
+.LeftPanel 
+{
+    color: white;
+    left: 0;
+    width: 200px;
+    height: 500px;
+    float: left;
+    border: solid; border-width: 1px;
+    background-color: dodgerblue;
+}
+
+/*.RightPanel
+{
+    color: white;
+    float: right;
+    right: 0;
+    height: 500px;
+    width: 200px;
+    border: solid; border-width: 1px;
+    background-color: mediumseagreen;
+}*/
+
+.CenterPanel 
+{
+    height: 500px;
+    width: auto;
+    border: solid; border-width: 1px;
+}
+
+.Footer 
+{
+    color: white;
+    height: 30px;
+    bottom: 0;
+    text-align: center;
+    border: solid; border-width: 1px;
+    background-color: gray;
+}

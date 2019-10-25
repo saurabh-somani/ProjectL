@@ -1,0 +1,34 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ProjectL.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <link href="StyleSheet1.css" rel="stylesheet" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="Header">
+
+            Header</div>
+        
+        <div class="LeftPanel">
+            
+            Left</div>
+        
+        <div class="CenterPanel">
+            <asp:ContentPlaceHolder ID="CenterContent" runat="server">
+                
+            </asp:ContentPlaceHolder>
+        </div>
+
+        
+    </form>
+    <div class="Footer">
+        Footer
+    </div>
+</body>
+</html>
