@@ -21,10 +21,10 @@ namespace ProjectL
         protected void Login(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename='C:\Users\Mahe\Desktop\7th Sem\IT_LAB\Codes\Project\repo\ProjectL\ProjectL\PlacementDB.mdf';Integrated Security=True";
+            con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
 
-             try
-            {
+            try
+             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Select * from StudLogin where StudentId = @selstud",con );
                 cmd.Parameters.AddWithValue("@selstud", TextBox1.Text);
@@ -58,7 +58,7 @@ namespace ProjectL
         protected void Select()
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename='PlacementDB.mdf';Initial Catalog=PlacementDB;Integrated Security=True";
+            con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
 
             SqlCommand com = new SqlCommand("SELECT * FROM Offers", con);
 
