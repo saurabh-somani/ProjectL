@@ -40,16 +40,19 @@ namespace ProjectL
                 {
                     //login successfull
                     Session["user"] = TextBox1.Text;
+                    rd.Close();
                     cmd.CommandText = "Select Branch from Student where StudentID = @selstud";
                     rd = cmd.ExecuteReader();
                     rd.Read();
                     b = rd["Branch"].ToString();
                     Session["Branch"] = b;
+                    rd.Close();
                     Response.Redirect("StudentPage.aspx");
                 }
                 else
                 {
                     //Login fail
+                    rd.Close();
                 }
                 
             }

@@ -21,8 +21,8 @@ namespace ProjectL
             SqlConnection con = new SqlConnection();
             con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
 
-            SqlCommand com = new SqlCommand("SELECT * FROM Offer as o where o.OfferID = (SELECT OfferID FROM Elg_Branch WHERE Branch = @b)", con);
-            com.Parameters.AddWithValue("@b", Session["branch"]);
+            SqlCommand com = new SqlCommand("SELECT * FROM Offer where OfferID = (SELECT OfferID FROM Elg_Branch WHERE Branch = @b)", con);
+            com.Parameters.AddWithValue("@b", Session["Branch"].ToString());
 
             try
             {
