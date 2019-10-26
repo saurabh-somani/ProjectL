@@ -51,4 +51,11 @@
     <br />
     <asp:Label ID="Label1" runat="server"></asp:Label>
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" ForeColor="Red" />
+    <br />
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false">
+        <Columns>
+            <asp:BoundField DataField="Company" HeaderText="Company" />
+            <asp:BoundField DataField="Type" HeaderText="Type" />
+        </Columns>
+    </asp:GridView>
 </asp:Content>
