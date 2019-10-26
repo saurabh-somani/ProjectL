@@ -17,7 +17,9 @@
         
         <div class="LeftPanel">
             
-            Left</div>
+            Left<asp:ContentPlaceHolder ID="LeftContent" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
         
         <div class="CenterPanel">
             <asp:ContentPlaceHolder ID="CenterContent" runat="server">
