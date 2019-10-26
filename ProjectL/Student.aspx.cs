@@ -20,6 +20,7 @@ namespace ProjectL
 
         protected void Login(object sender, EventArgs e)
         {
+            string b;
             SqlConnection con = new SqlConnection();
             con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
 
@@ -38,6 +39,13 @@ namespace ProjectL
                 if(TextBox2.Text.Equals(rd["Password"]))
                 {
                     //login successfull
+                    Session["user"] = TextBox1.Text;
+                    cmd.CommandText = "Select Branch from Student where StudentID = @selstud";
+                    rd = cmd.ExecuteReader();
+                    rd.Read();
+                    b = rd["Branch"].ToString();
+                    Session["Branch"] = b;
+                    Response.Redirect("StudentPage.aspx");
                 }
                 else
                 {
