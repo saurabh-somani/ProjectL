@@ -33,6 +33,7 @@
             </td>
             <td class="auto-style6">
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="TextBox1" ErrorMessage="Username Required" Display="Dynamic" ForeColor="Red">*</asp:RequiredFieldValidator>
+                <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox1" Display="Dynamic" ErrorMessage="Username must be number" ForeColor="Red" MaximumValue="300000000" MinimumValue="100000000" Type="Double">*</asp:RangeValidator>
             </td>
         </tr>
         <tr>
