@@ -19,6 +19,7 @@ namespace ProjectL
 
         protected void Login(object sender, EventArgs e)
         {
+            string b;
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = 'E:\IT Lab project\myrepo\ProjectL\ProjectL\PlacementDB.mdf'; Integrated Security = True; Pooling = False";
             try
@@ -36,6 +37,13 @@ namespace ProjectL
                 if(TextBox2.Text.Equals(rd["Password"]))
                 {
                     //login successfull
+                    Session["user"] = TextBox1.Text;
+                    cmd.CommandText = "Select Branch from Student where StudentID = @selstud";
+                    rd = cmd.ExecuteReader();
+                    rd.Read();
+                    b = rd["Branch"].ToString();
+                    Session["Branch"] = b;
+                    Response.Redirect("StudentPage.aspx");
                 }
                 else
                 {
