@@ -27,7 +27,7 @@ namespace ProjectL
             try
              {
                 con.Open();
-                SqlCommand cmd = new SqlCommand("Select * from StudLogin where StudentId = @selstud",con );
+                SqlCommand cmd = new SqlCommand("Select * from StudLogin where StudentId = @selstud", con);
                 cmd.Parameters.AddWithValue("@selstud", TextBox1.Text);
 
                 SqlDataReader rd = cmd.ExecuteReader();

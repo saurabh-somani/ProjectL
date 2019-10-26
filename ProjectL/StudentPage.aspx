@@ -5,11 +5,15 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="false" AutoGenerateSelectButton="true">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AllowSorting="true">
         <Columns>
-            <asp:BoundField DataField="Company" HeaderText="Company" />
-            <asp:BoundField DataField="Deadline" HeaderText="Deadline" DataFormatString="{0:dd/MM/yyyy}"/>
-            <asp:BoundField DataField="Type" HeaderText="Type" />
+            <asp:CommandField ShowSelectButton="True" />
+            <asp:BoundField DataField="Company" HeaderText="Company" SortExpression="Company" />
+            <asp:BoundField DataField="Deadline" HeaderText="Deadline" SortExpression="Deadline" DataFormatString="{0:dd/MM/yyyy}" />
+            <asp:BoundField DataField="Type" HeaderText="Type" SortExpression="Type" />
         </Columns>
     </asp:GridView>
+    <br />
+<br />
+<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 </asp:Content>
