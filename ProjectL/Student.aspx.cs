@@ -62,30 +62,5 @@ namespace ProjectL
                 con.Close();
             }
         }
-
-        protected void Select()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
-
-            SqlCommand com = new SqlCommand("SELECT * FROM Offers", con);
-
-            try
-            {
-                con.Open();
-                SqlDataAdapter adapter = new SqlDataAdapter(com);
-                DataSet ds = new DataSet();
-                adapter.Fill(ds, "Offer");
-
-                GridView1.DataSource = ds;
-                GridView1.DataBind();
-            }
-            catch(Exception)
-            { }
-            finally
-            {
-                con.Close();
-            }
-        }
     }
 }
