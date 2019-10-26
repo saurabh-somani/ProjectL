@@ -22,7 +22,8 @@ namespace ProjectL
         {
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename='C:\Users\Mahe\Desktop\7th Sem\IT_LAB\Codes\Project\repo\ProjectL\ProjectL\PlacementDB.mdf';Integrated Security=True";
-            try
+
+             try
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand("Select * from StudLogin where StudentId = @selstud",con );
