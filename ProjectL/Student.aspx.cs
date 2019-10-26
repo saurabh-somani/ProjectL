@@ -20,7 +20,7 @@ namespace ProjectL
         protected void Login(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = 'E:\IT Lab project\myrepo\ProjectL\PlacementDB.mdf'; Integrated Security = True; Pooling = False";
+            con.ConnectionString = @"Data Source = (LocalDB)\MSSQLLocalDB; AttachDbFilename = 'E:\IT Lab project\myrepo\ProjectL\ProjectL\PlacementDB.mdf'; Integrated Security = True; Pooling = False";
             try
             {
                 con.Open();
