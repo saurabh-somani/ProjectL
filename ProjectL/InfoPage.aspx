@@ -19,7 +19,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
-    <h2><asp:Label ID="LCompany" runat="server" Text="Label"></asp:Label></h2>
+    <h2><asp:Label ID="LCompany" runat="server" Text="Information"></asp:Label></h2>
     <br />
     <br />
     <br />
@@ -27,37 +27,37 @@
         <tr>
             <td class="auto-style3">OfferID:</td>
             <td>
-                <asp:Label ID="LOfferID" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="LOfferID" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style4">Role:</td>
             <td class="auto-style2">
-                <asp:Label ID="LRole" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="LRole" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Type:</td>
             <td>
-                <asp:Label ID="LType" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="LType" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Description:</td>
             <td>
-                <asp:Label ID="LDescription" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="LDescription" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Compensation:</td>
             <td>
-                <asp:Label ID="LCompensation" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="LCompensation" runat="server"></asp:Label>
             </td>
         </tr>
         <tr>
             <td class="auto-style3">Deadline:</td>
             <td>
-                <asp:Label ID="LDeadline" runat="server" Text="Label"></asp:Label>
+                <asp:Label ID="LDeadline" runat="server"></asp:Label>
             </td>
         </tr>
     </table>

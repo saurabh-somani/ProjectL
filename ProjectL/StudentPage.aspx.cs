@@ -11,6 +11,7 @@ namespace ProjectL
 {
     public partial class StudentPage : System.Web.UI.Page
     {
+        string oid;
         protected void Page_Load(object sender, EventArgs e)
         {
             Select();
@@ -21,7 +22,7 @@ namespace ProjectL
             SqlConnection con = new SqlConnection();
             con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
 
-            SqlCommand com = new SqlCommand("SELECT Company, Deadline, Type FROM Offer o INNER JOIN Elg_Branch e ON o.OfferID = e.OfferID AND e.Branch = @b", con);
+            SqlCommand com = new SqlCommand("SELECT o.OfferID, Company, Deadline, Type FROM Offer o INNER JOIN Elg_Branch e ON o.OfferID = e.OfferID AND e.Branch = @b", con);
             com.Parameters.AddWithValue("@b", Session["Branch"].ToString());
             //SqlCommand com = new SqlCommand("SELECT Company, Deadline, Type FROM Offer", con);
             Label1.Text = Session["Branch"].ToString();
@@ -68,6 +69,13 @@ namespace ProjectL
             {
                 con.Close();
             }*/
+        }
+
+        protected void Info(object sender, EventArgs e)
+        {
+            string s;
+            s = "InfoPage.aspx?OfferID="+GridView1.SelectedRow.Cells[1].Text;
+            Response.Redirect(s);
         }
     }
 }

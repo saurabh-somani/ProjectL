@@ -12,13 +12,39 @@ namespace ProjectL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            LCompany.Text = Request.QueryString["Company"];
-            LOfferID.Text = Request.QueryString["Offer"];
-            LRole.Text = Request.QueryString["Role"];
-            LType.Text = Request.QueryString["Type"];
-            LDescription.Text = Request.QueryString["Description"];
-            LCompensation.Text = Request.QueryString["Compensation"];
-            LDeadline.Text = Request.QueryString["Deadline"];
+            string s = Request.QueryString["OfferID"];
+            
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select * from Offer WHERE OfferID = @o", con);
+                cmd.Parameters.AddWithValue("@o", s);
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                rd.Read();
+
+                LCompany.Text = rd["Company"].ToString();
+                LOfferID.Text = rd["OfferID"].ToString();
+                LRole.Text = rd["Role"].ToString();
+                LType.Text = rd["Type"].ToString();
+                LDescription.Text = rd["Description"].ToString();
+                LCompensation.Text = rd["Compensation"].ToString();
+                LDeadline.Text = rd["Deadline"].ToString();
+
+                rd.Close();
+            }
+            catch (Exception ex)
+            {
+                Label1.Text = "Error: " + ex.ToString();
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            
         }
 
         protected void Apply_Click(object sender, EventArgs e)
