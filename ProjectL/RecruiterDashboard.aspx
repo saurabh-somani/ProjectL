@@ -13,6 +13,10 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <br />
+    <br />
+    <asp:Button ID="Button2" runat="server" Text="Students" OnClick ="Search" />
+    <br />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
     <p>
@@ -23,19 +27,16 @@
     <tr>
         <td class="auto-style2">Company:</td>
         <td class="auto-style3">
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Company" DataValueField="Company" Width="126px">
-            </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PlacementDBConnectionString %>" SelectCommand="SELECT DISTINCT [Company] FROM [Company] ORDER BY [Company]" ProviderName="System.Data.SqlClient"></asp:SqlDataSource>
+            <asp:TextBox ID="TextBox1" runat="server" Enabled="False"></asp:TextBox>
         </td>
         <td>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownList1" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
-        </td>
+            &nbsp;</td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style2">SubType:</td>
         <td class="auto-style3">
-            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server" Enabled="False"></asp:TextBox>
         </td>
         <td>
             &nbsp;</td>
@@ -63,5 +64,5 @@
 <br />
 <asp:Button ID="Update" runat="server" Text="Update" OnClick="Update_Click" />
 &nbsp;&nbsp;&nbsp;
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+    <asp:Label ID="Label1" runat="server"></asp:Label>
 </asp:Content>

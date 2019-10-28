@@ -18,7 +18,7 @@
             <td>
                 <asp:CheckBoxList ID="CheckBoxList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Skill" DataValueField="Skill">
                 </asp:CheckBoxList>
-                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=&quot;C:\Users\Mahe\Desktop\7th Sem\IT_LAB\Codes\Project\repo\ProjectL\ProjectL\PlacementDB.mdf&quot;;Initial Catalog=PlacementDB;Integrated Security=True" ProviderName="System.Data.SqlClient" SelectCommand="SELECT DISTINCT [Skill] FROM [SkillSet] ORDER BY [Skill]"></asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PlacementDB %>" ProviderName="System.Data.SqlClient" SelectCommand="SELECT DISTINCT [Skill] FROM [SkillSet] ORDER BY [Skill]"></asp:SqlDataSource>
             </td>
             <td>&nbsp;</td>
         </tr>

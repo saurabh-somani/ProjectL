@@ -13,5 +13,10 @@ namespace ProjectL
         {
 
         }
+
+        protected void logout(object sender, EventArgs e)
+        {
+            Response.Redirect("InitialPage.aspx");
+        }
     }
 }

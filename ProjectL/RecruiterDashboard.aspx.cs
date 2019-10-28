@@ -12,6 +12,35 @@ namespace ProjectL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            TextBox1.Text = Session["user"].ToString();
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
+            SqlCommand cmd = new SqlCommand();
+            
+            try
+            {
+                con.Open();
+                cmd.CommandText = "SELECT * FROM Company WHERE Company= @Sel";
+                cmd.Parameters.AddWithValue("@Sel", Session["User"].ToString());
+                cmd.Connection = con;
+
+                SqlDataReader rd = cmd.ExecuteReader();
+                rd.Read();
+                TextBox2.Text = rd["SubType"].ToString();
+                TextBox3.Text = rd["email"].ToString();
+                TextBox4.Text = rd["phone"].ToString();
+
+                rd.Close();
+            }
+            catch(Exception ex)
+            {
+                Label1.Text = "Error " + ex.ToString();
+            }
+            finally
+            {
+                con.Close();
+            }
+
 
         }
 
@@ -27,7 +56,7 @@ namespace ProjectL
                 query += "SubType = @st ";
                 query += "WHERE Company = @c";
                 com = new SqlCommand(query, con);
-                com.Parameters.AddWithValue("@c", DropDownList1.SelectedItem.Text);
+                com.Parameters.AddWithValue("@c", TextBox1.Text);
                 com.Parameters.AddWithValue("@st", TextBox2.Text);
 
                 try
@@ -51,7 +80,7 @@ namespace ProjectL
                 query += "email = @e ";
                 query += "WHERE Company = @c";
                 com = new SqlCommand(query, con);
-                com.Parameters.AddWithValue("@c", DropDownList1.SelectedItem.Text);
+                com.Parameters.AddWithValue("@c", TextBox1.Text);
                 com.Parameters.AddWithValue("@e", TextBox3.Text);
 
                 try
@@ -75,7 +104,7 @@ namespace ProjectL
                 query += "phone = @p ";
                 query += "WHERE Company = @c";
                 com = new SqlCommand(query, con);
-                com.Parameters.AddWithValue("@c", DropDownList1.SelectedItem.Text);
+                com.Parameters.AddWithValue("@c", TextBox1.Text);
                 com.Parameters.AddWithValue("@p", TextBox4.Text);
 
                 try
@@ -99,6 +128,16 @@ namespace ProjectL
         {
             UpdateQuery();
             Label1.Text = "Updated Successfully";
+        }
+
+        protected void Search(object sender, EventArgs e)
+        {
+            Response.Redirect("RecruiterSearch.aspx");
+        }
+
+        protected void logout(object sender, EventArgs e)
+        {
+            Response.Redirect("InitialPage.aspx");
         }
     }
 }

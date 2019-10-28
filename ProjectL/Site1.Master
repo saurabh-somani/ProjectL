@@ -16,8 +16,8 @@
             Header</div>
         
         <div class="LeftPanel">
-            
-            Left<asp:ContentPlaceHolder ID="LeftContent" runat="server">
+            <asp:Button ID="Button1" runat="server" Text="Logout" OnClick ="logout" />
+            <asp:ContentPlaceHolder ID="LeftContent" runat="server">
             </asp:ContentPlaceHolder>
         </div>
         
