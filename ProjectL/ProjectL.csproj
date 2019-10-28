@@ -71,6 +71,7 @@
     <Content Include="InitialPage.aspx" />
     <Content Include="Recruiter.aspx" />
     <Content Include="RecruiterDashboard.aspx" />
+    <Content Include="RecruiterSearch.aspx" />
     <Content Include="Student.aspx" />
     <Content Include="StudentPage.aspx" />
     <Content Include="StyleSheet1.css" />
@@ -106,6 +107,13 @@
     </Compile>
     <Compile Include="RecruiterDashboard.aspx.designer.cs">
       <DependentUpon>RecruiterDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RecruiterSearch.aspx.cs">
+      <DependentUpon>RecruiterSearch.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecruiterSearch.aspx.designer.cs">
+      <DependentUpon>RecruiterSearch.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>

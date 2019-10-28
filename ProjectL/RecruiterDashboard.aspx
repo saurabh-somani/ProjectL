@@ -25,7 +25,7 @@
         <td class="auto-style3">
             <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Company" DataValueField="Company" Width="126px">
             </asp:DropDownList>
-            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PlacementDBConnectionString %>" SelectCommand="SELECT DISTINCT [Company] FROM [Company] ORDER BY [Company]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PlacementDBConnectionString %>" SelectCommand="SELECT DISTINCT [Company] FROM [Company] ORDER BY [Company]" ProviderName="System.Data.SqlClient"></asp:SqlDataSource>
         </td>
         <td>
             <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownList1" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
