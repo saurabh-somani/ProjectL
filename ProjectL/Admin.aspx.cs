@@ -4,6 +4,9 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data.Sql;
+using System.Data.SqlClient;
+
 
 namespace ProjectL
 {
@@ -14,9 +17,47 @@ namespace ProjectL
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void Login(object sender, EventArgs e)
         {
-            Response.Redirect("AdminDashboard.aspx");
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
+
+            SqlDataReader rd;
+            try
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand("Select * from AdLogin where Id = @sel", con);
+                cmd.Parameters.AddWithValue("@sel", TextBox1.Text);
+
+                rd = cmd.ExecuteReader();
+                if (!rd.Read())
+                {
+                    Label1.Text = "Id not found";
+                }
+
+                if (TextBox2.Text.Equals(rd["Password"]))
+                {
+                    //login successfull
+                    Session["user"] = TextBox1.Text;
+                    rd.Close();
+                    Response.Redirect("AdminDashboard.aspx");
+                }
+                else
+                {
+                    //Login fail
+                    Label1.Text = "Invalid password";
+                    rd.Close();
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Label1.Text = "Error " + ex.ToString();
+            }
+            finally
+            {
+                con.Close();
+            }
         }
     }
 }
