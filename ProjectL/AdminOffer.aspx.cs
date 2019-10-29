@@ -14,6 +14,7 @@ namespace ProjectL
         protected void Page_Load(object sender, EventArgs e)
         {
             CompanyTB.Text = Session["user"].ToString();
+            CompanyTB.Enabled = false;
             Select();
         }
 
