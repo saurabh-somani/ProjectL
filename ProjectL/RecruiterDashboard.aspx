@@ -13,10 +13,11 @@
 </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <asp:Button ID="Button1" runat="server" Text="Create Offer" Onclick="createOffer"/>
+    <asp:Button ID="Button1" runat="server" Text="Create Offer" Onclick="createOffer" CausesValidation="False"/>
     <br />
     <br />
-    <asp:Button ID="Button2" runat="server" Text="Students" OnClick ="Search" />
+    <asp:Button ID="Button2" runat="server" Text="Students" OnClick ="Search" CausesValidation="False" />
+    <br />
     <br />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
