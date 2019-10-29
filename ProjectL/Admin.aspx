@@ -14,7 +14,11 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
     <p>
-        Admin Login</p>
+        &nbsp;</p>
+    <p>
+        Admin Login:</p>
+    <p>
+        &nbsp;</p>
     <table class="auto-style1">
         <tr>
             <td class="auto-style2">Username:</td>

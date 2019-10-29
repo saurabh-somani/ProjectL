@@ -29,12 +29,6 @@
     float: left;
 }
 
-.Header h1
-{
-    position: relative;
-    max-height: 60px;
-}
-
 .LeftPanel 
 {
     color: white;
