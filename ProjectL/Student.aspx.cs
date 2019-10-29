@@ -15,7 +15,11 @@ namespace ProjectL
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Select();
+            HttpCookie cookie = Request.Cookies["user"];
+            if(cookie !=null && cookie["student"]!=null)
+            {
+                TextBox1.Text = cookie["student"].ToString();
+            }
         }
 
         protected void Login(object sender, EventArgs e)
@@ -47,6 +51,21 @@ namespace ProjectL
                     b = rd["Branch"].ToString();
                     Session["Branch"] = b;
                     rd.Close();
+
+                    HttpCookie cookie = Request.Cookies["user"];
+                    if(cookie==null)
+                    {
+                        cookie = new HttpCookie("user");
+                        cookie["student"] = TextBox1.Text;
+                        cookie.Expires = DateTime.Now.AddDays(1);
+                        Response.Cookies.Add(cookie);
+                    }
+                    else if(cookie["student"] == null)
+                    {
+                        cookie["student"] = TextBox1.Text;
+                        cookie.Expires = DateTime.Now.AddDays(1);
+                        Response.Cookies.Add(cookie);
+                    }
                     Response.Redirect("StudentPage.aspx");
                 }
                 else
@@ -58,7 +77,14 @@ namespace ProjectL
             }
             catch(Exception ex)
             {
-                Label1.Text = "Error " + ex.ToString();
+                if (ex.Message.Contains("Invalid attempt to read when no data is present"))
+                {
+                    Label1.Text = "Id not found";
+                }
+                else
+                {
+                    Label1.Text = "Error " + ex.Message;
+                }
             }
             finally
             {
