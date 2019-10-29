@@ -58,7 +58,14 @@ namespace ProjectL
             }
             catch(Exception ex)
             {
-                Label1.Text = "Error " + ex.ToString();
+                if (ex.Message.Contains("Invalid attempt to read when no data is present"))
+                {
+                    Label1.Text = "Id not found";
+                }
+                else
+                {
+                    Label1.Text = "Error " + ex.Message;
+                }
             }
             finally
             {
