@@ -82,6 +82,25 @@
                 <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="DeadlineTB" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
             </td>
         </tr>
+        <tr>
+            <td class="auto-style2">Eligible Branches:</td>
+            <td class="auto-style5">
+                <asp:CheckBoxList ID="CheckBoxList1" runat="server" Width="77px">
+                    <asp:ListItem>AU</asp:ListItem>
+                    <asp:ListItem>AE</asp:ListItem>
+                    <asp:ListItem>CCE</asp:ListItem>
+                    <asp:ListItem>CSE</asp:ListItem>
+                    <asp:ListItem>ECE</asp:ListItem>
+                    <asp:ListItem>EEE</asp:ListItem>
+                    <asp:ListItem>ICE</asp:ListItem>
+                    <asp:ListItem>IT</asp:ListItem>
+                    <asp:ListItem>ME</asp:ListItem>
+                    <asp:ListItem>MT</asp:ListItem>
+                </asp:CheckBoxList>
+            </td>
+            <td class="auto-style4">
+                &nbsp;</td>
+        </tr>
     </table>
     <br />
     <br />

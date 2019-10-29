@@ -74,6 +74,44 @@ namespace ProjectL
             }
         }
 
+        protected void InsertEB()
+        {
+            int index = GridView1.Rows.Count - 1;
+            Int32.TryParse(GridView1.Rows[index].Cells[0].Text, out int oid);
+
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
+
+            SqlCommand com;
+
+            foreach(ListItem d in CheckBoxList1.Items)
+            {
+                if(d.Selected)
+                {
+                    com = new SqlCommand("INSERT INTO Elg_Branch (OfferID,Branch) VALUES (@oid, @b)", con);
+                    com.Parameters.AddWithValue("@oid", oid);
+                    com.Parameters.AddWithValue("@b", d.Text);
+
+                    try
+                    {
+                        con.Open();
+                        com.ExecuteNonQuery();
+
+                        Label1.Visible = true;
+                    }
+                    catch (Exception ex)
+                    {
+                        Response.Write("<script>alert('" + ex.ToString() + "')</script>");
+                    }
+                    finally
+                    {
+                        com.Dispose();
+                        con.Close();
+                    }
+                }
+            }
+        }
+
         protected void Apply_Click(object sender, EventArgs e)
         {
             Insert();
@@ -85,6 +123,9 @@ namespace ProjectL
             DeadlineTB.Text = "";
 
             Select();
+            InsertEB();
+
+            CheckBoxList1.ClearSelection();
         }
     }
 }
