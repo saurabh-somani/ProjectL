@@ -12,7 +12,11 @@ namespace ProjectL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpCookie cookie = Request.Cookies["user"];
+            if (cookie != null && cookie["recruiter"] != null)
+            {
+                TextBox1.Text = cookie["recruiter"].ToString();
+            }
         }
 
         protected void login(object sender, EventArgs e)
@@ -38,6 +42,22 @@ namespace ProjectL
                     //login successfull
                     Session["user"] = TextBox1.Text;
                     rd.Close();
+
+                    HttpCookie cookie = Request.Cookies["user"];
+                    if (cookie == null)
+                    {
+                        cookie = new HttpCookie("user");
+                        cookie["recruiter"] = TextBox1.Text;
+                        cookie.Expires = DateTime.Now.AddDays(1);
+                        Response.Cookies.Add(cookie);
+                    }
+                    else if (cookie["recruiter"] == null)
+                    {
+                        cookie["recruiter"] = TextBox1.Text;
+                        cookie.Expires = DateTime.Now.AddDays(1);
+                        Response.Cookies.Add(cookie);
+                    }
+
                     Response.Redirect("RecruiterDashboard.aspx");
                 }
                 else

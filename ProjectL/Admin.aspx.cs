@@ -14,7 +14,11 @@ namespace ProjectL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            HttpCookie cookie = Request.Cookies["user"];
+            if (cookie != null && cookie["admin"] != null)
+            {
+                TextBox1.Text = cookie["admin"].ToString();
+            }
         }
 
         protected void Login(object sender, EventArgs e)
@@ -40,6 +44,21 @@ namespace ProjectL
                     //login successfull
                     Session["user"] = TextBox1.Text;
                     rd.Close();
+                    //cookies to store username
+                    HttpCookie cookie = Request.Cookies["user"];
+                    if (cookie == null || cookie["admin"] == null)
+                    {
+                        cookie = new HttpCookie("user");
+                        cookie["admin"] = TextBox1.Text;
+                        cookie.Expires = DateTime.Now.AddDays(1);
+                        Response.Cookies.Add(cookie);
+                    }
+                    else if (cookie["admin"] == null)
+                    {
+                        cookie["admin"] = TextBox1.Text;
+                        cookie.Expires = DateTime.Now.AddDays(1);
+                        Response.Cookies.Add(cookie);
+                    }
                     Response.Redirect("AdminDashboard.aspx");
                 }
                 else
