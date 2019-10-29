@@ -36,7 +36,8 @@
         </tr>
     </table>
     <br />
-    <asp:Button ID="Button1" runat="server" Text="Button" />
+    <asp:Button ID="Button1" runat="server" Text="Login" TabIndex="3" OnClick ="Login" />
     <br />
+    <asp:Label ID="Label1" runat="server"></asp:Label>
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" ForeColor="Red" />
 </asp:Content>
