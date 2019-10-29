@@ -61,15 +61,21 @@ namespace ProjectL
             {
                 con.Open();
                 com.ExecuteNonQuery();
-                Label1.Visible = true;
                 Label1.Text = "Applied Successfully";
                 Apply.Enabled = false;
+                
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert(" + ex.ToString() + ")</script>");
-                Label1.Visible = true;
-                Label1.Text = ex.ToString();
+                if (ex.Message.StartsWith("Violation of PRIMARY KEY"))
+                {
+                    Label1.Text = "Already applied";
+                }
+                else
+                {
+                    Response.Write("<script>alert(" + ex.ToString() + ")</script>");
+                    Label1.Text = ex.Message;
+                }
             }
             finally
             {
@@ -84,7 +90,7 @@ namespace ProjectL
 
         protected void Applied(object sender, EventArgs e)
         {
-            ;
+            Response.Redirect("AppliedPage.aspx");
         }
     }
 }

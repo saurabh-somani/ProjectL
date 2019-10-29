@@ -69,6 +69,6 @@
     <br />
     <asp:Button ID="Apply" runat="server" Text="Apply" OnClick="Apply_Click" />
     &nbsp;&nbsp;&nbsp;
-    <asp:Label ID="Label1" runat="server" Text="Label" Visible="False"></asp:Label>
+    <asp:Label ID="Label1" runat="server"></asp:Label>
     <br />
 </asp:Content>

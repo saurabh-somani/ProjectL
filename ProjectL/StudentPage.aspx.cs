@@ -11,7 +11,6 @@ namespace ProjectL
 {
     public partial class StudentPage : System.Web.UI.Page
     {
-        string oid;
         protected void Page_Load(object sender, EventArgs e)
         {
             Select();
@@ -76,6 +75,16 @@ namespace ProjectL
             string s;
             s = "InfoPage.aspx?OfferID="+GridView1.SelectedRow.Cells[1].Text;
             Response.Redirect(s);
+        }
+
+        protected void Applied(object sender, EventArgs e)
+        {
+            Response.Redirect("AppliedPage.aspx");
+        }
+
+        protected void Companies(object sender, EventArgs e)
+        {
+            Response.Redirect("StudentPage.aspx");
         }
     }
 }

@@ -2,6 +2,10 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <asp:Button ID="Button2" runat="server" Text="Applied" Width="100px" OnClick="Applied" />
+    <br />
+    <asp:Button ID="Button1" runat="server" Text="Companies" Width="100px" OnClick="Companies" />
+    <br />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
     <br />
