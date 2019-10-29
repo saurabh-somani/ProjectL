@@ -71,6 +71,8 @@
     <Content Include="AdminDashboard.aspx" />
     <Content Include="AdminOffer.aspx" />
     <Content Include="AppliedPage.aspx" />
+    <Content Include="Images\mitLogo.png" />
+    <Content Include="Images\mitLogo2.png" />
     <Content Include="InfoPage.aspx" />
     <Content Include="InitialPage.aspx" />
     <Content Include="ManageStudents.aspx" />
@@ -185,6 +187,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Themes\InitialPageTheme\InitialPageTheme.skin" />
     <None Include="packages.config" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
@@ -194,6 +197,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

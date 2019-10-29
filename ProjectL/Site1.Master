@@ -8,12 +8,21 @@
     <title></title>
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            left: 0px;
+            top: -20px;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="Header">
 
-            Header</div>
+                <asp:Image ID="Image1" runat="server" Height="58px" ImageUrl="~/Images/mitLogo2.png" Width="107px" />
+                Placement Management System
+
+        </div>
         
         <div class="LeftPanel">
             <asp:ContentPlaceHolder ID="LeftContent" runat="server">
@@ -30,7 +39,15 @@
         
     </form>
     <div class="Footer">
-        Footer
+        <b>Contact:</b>
+        <br />
+        Office of Industrial Liason, Placement and Practice School
+        <br />
+        Manipal Institute of Technology
+        <br />
+        Manipal Academy of Higher Education
+        <br />
+        Phone: 0123-9876543
     </div>
 </body>
 </html>
