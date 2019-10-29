@@ -33,7 +33,7 @@
     color: white;
     left: 0;
     width: 200px;
-    height: 600px;
+    height: 800px;
     float: left;
     border: solid; border-width: 1px;
     background-color: dodgerblue;
@@ -52,7 +52,7 @@
 
 .CenterPanel 
 {
-    height: 600px;
+    height: 800px;
     width: auto;
     border: solid; border-width: 1px;
 }
