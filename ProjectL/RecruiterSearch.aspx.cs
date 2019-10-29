@@ -25,7 +25,7 @@ namespace ProjectL
             SqlConnection con = new SqlConnection();
             con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
 
-            String query = "SELECT DISTINCT st.StudentID, Name, Branch, CGPA FROM Student st INNER JOIN SkillSet ss ON st.StudentID = ss.StudentID ";
+            string query = "SELECT DISTINCT st.StudentID, st.Name, st.Branch, st.CGPA FROM Student st, SkillSet ss, Elg_Stud es WHERE st.StudentID = ss.StudentID AND st.StudentID = es.StudentID ";
             int count = 0;
             foreach(ListItem d in CheckBoxList1.Items)
             {
@@ -34,7 +34,7 @@ namespace ProjectL
                     //Label1.Text += "  " + d.Value;
                     if (count == 0)
                     {
-                        query += "WHERE ss.Skill = '" + d.Value + "'";
+                        query += "AND ss.Skill = '" + d.Value + "'";
                         count++;
                     }
                     else
