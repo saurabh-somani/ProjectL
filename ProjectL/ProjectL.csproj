@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Admin.aspx" />
     <Content Include="AdminDashboard.aspx" />
+    <Content Include="AdminOffer.aspx" />
     <Content Include="AppliedPage.aspx" />
     <Content Include="InfoPage.aspx" />
     <Content Include="InitialPage.aspx" />
@@ -96,6 +97,13 @@
     </Compile>
     <Compile Include="AdminDashboard.aspx.designer.cs">
       <DependentUpon>AdminDashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AdminOffer.aspx.cs">
+      <DependentUpon>AdminOffer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminOffer.aspx.designer.cs">
+      <DependentUpon>AdminOffer.aspx</DependentUpon>
     </Compile>
     <Compile Include="AppliedPage.aspx.cs">
       <DependentUpon>AppliedPage.aspx</DependentUpon>
