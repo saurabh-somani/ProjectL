@@ -5,7 +5,7 @@
     <asp:Button ID="Button2" runat="server" Text="Manage Students" OnClick="Button2_Click" />
 <br />
 <br />
-<asp:Button ID="Button3" runat="server" Text="Manage Companies" />
+<asp:Button ID="Button3" runat="server" Text="Manage Companies" OnClick ="manageCom" />
 <br />
 <br />
 </asp:Content>

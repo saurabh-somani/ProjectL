@@ -135,9 +135,9 @@ namespace ProjectL
             Response.Redirect("RecruiterSearch.aspx");
         }
 
-        protected void logout(object sender, EventArgs e)
+        protected void createOffer(object sender, EventArgs e)
         {
-            Response.Redirect("InitialPage.aspx");
+            Response.Redirect("AdminOffer.aspx");
         }
     }
 }

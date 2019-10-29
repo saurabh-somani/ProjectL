@@ -73,6 +73,7 @@
     <Content Include="AppliedPage.aspx" />
     <Content Include="InfoPage.aspx" />
     <Content Include="InitialPage.aspx" />
+    <Content Include="ManageCompany.aspx" />
     <Content Include="ManageStudents.aspx" />
     <Content Include="Recruiter.aspx" />
     <Content Include="RecruiterDashboard.aspx" />
@@ -125,6 +126,13 @@
     </Compile>
     <Compile Include="InitialPage.aspx.designer.cs">
       <DependentUpon>InitialPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ManageCompany.aspx.cs">
+      <DependentUpon>ManageCompany.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ManageCompany.aspx.designer.cs">
+      <DependentUpon>ManageCompany.aspx</DependentUpon>
     </Compile>
     <Compile Include="ManageStudents.aspx.cs">
       <DependentUpon>ManageStudents.aspx</DependentUpon>
