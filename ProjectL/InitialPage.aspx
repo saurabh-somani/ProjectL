@@ -3,6 +3,8 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
     <p>
+        &nbsp;</p>
+    <p>
         Login As:</p>
     <p>
         <asp:Button ID="BRecruiter" runat="server" Text="Recruiter" Width="100px" OnClick="BRecruiter_Click" />

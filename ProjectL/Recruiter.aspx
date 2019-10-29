@@ -24,7 +24,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="CenterContent" runat="server">
-    Recruiter Login<br />
+    <br />
+    Recruiter Login:<br />
+    <br />
     <table class="auto-style1">
         <tr>
             <td class="auto-style4">Username:</td>
