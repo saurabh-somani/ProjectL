@@ -73,7 +73,7 @@ namespace ProjectL
                 }
                 else
                 {
-                    Response.Write("<script>alert(" + ex.ToString() + ")</script>");
+                    Response.Write("<script>alert('" + ex.ToString() + "')</script>");
                     Label1.Text = ex.Message;
                 }
             }

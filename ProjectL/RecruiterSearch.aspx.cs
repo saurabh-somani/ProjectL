@@ -58,7 +58,7 @@ namespace ProjectL
             }
             catch(Exception ex)
             {
-                Response.Write("<script>alert(" + ex.ToString() + ")</script>");
+                Response.Write("<script>alert('" + ex.ToString() + "')</script>");
             }
             finally
             {
