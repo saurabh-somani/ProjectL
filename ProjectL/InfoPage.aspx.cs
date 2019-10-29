@@ -67,7 +67,7 @@ namespace ProjectL
             }
             catch (Exception ex)
             {
-                Response.Write("<script>alert(" + ex.ToString() + ")</script>");
+                Response.Write("<script>alert('" + ex.ToString() + "')</script>");
                 Label1.Visible = true;
                 Label1.Text = ex.ToString();
             }
