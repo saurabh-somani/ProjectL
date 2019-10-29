@@ -18,5 +18,10 @@ namespace ProjectL
         {
             Response.Redirect("ManageStudents.aspx");
         }
+
+        protected void manageCom(object sender, EventArgs e)
+        {
+            Response.Redirect("ManageCompany.aspx");
+        }
     }
 }

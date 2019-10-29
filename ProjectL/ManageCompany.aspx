@@ -1,44 +1,33 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="RecruiterDashboard.aspx.cs" Inherits="ProjectL.RecruiterDashboard" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="ManageCompany.aspx.cs" Inherits="ProjectL.ManageCompany" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style type="text/css">
-    .auto-style1 {
-        width: 500px;
-    }
-    .auto-style2 {
-        width: 100px;
-    }
-    .auto-style3 {
-        width: 212px;
-    }
-</style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <asp:Button ID="Button1" runat="server" Text="Create Offer" Onclick="createOffer" CausesValidation="False"/>
+    <asp:Button ID="Button2" runat="server" Text="Back" onclick="backclick"/>
     <br />
-    <br />
-    <asp:Button ID="Button2" runat="server" Text="Students" OnClick ="Search" CausesValidation="False" />
-    <br />
-    <br />
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
     <p>
-    Recruiter Dashboard:</p>
+        Edit Company:</p>
 <p>
     &nbsp;</p>
 <table class="auto-style1">
     <tr>
         <td class="auto-style2">Company:</td>
         <td class="auto-style3">
-            <asp:TextBox ID="TextBox1" runat="server" Enabled="False"></asp:TextBox>
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Company" DataValueField="Company" Width="126px" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+            </asp:DropDownList>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PlacementDB %>" SelectCommand="SELECT DISTINCT [Company] FROM [Company] ORDER BY [Company]" ProviderName="System.Data.SqlClient"></asp:SqlDataSource>
         </td>
         <td>
-            &nbsp;</td>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownList1" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+        </td>
         <td>&nbsp;</td>
     </tr>
     <tr>
         <td class="auto-style2">SubType:</td>
         <td class="auto-style3">
-            <asp:TextBox ID="TextBox2" runat="server" Enabled="False"></asp:TextBox>
+            <asp:TextBox ID="TextBox2" runat="server"></asp:TextBox>
         </td>
         <td>
             &nbsp;</td>
@@ -67,4 +56,5 @@
 <asp:Button ID="Update" runat="server" Text="Update" OnClick="Update_Click" />
 &nbsp;&nbsp;&nbsp;
     <asp:Label ID="Label1" runat="server"></asp:Label>
+
 </asp:Content>

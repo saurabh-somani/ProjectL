@@ -13,6 +13,7 @@ namespace ProjectL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            CompanyTB.Text = Session["user"].ToString();
             Select();
         }
 
@@ -126,6 +127,11 @@ namespace ProjectL
             InsertEB();
 
             CheckBoxList1.ClearSelection();
+        }
+
+        protected void backClick(object sender, EventArgs e)
+        {
+            Response.Redirect("RecruiterDashboard.aspx");
         }
     }
 }

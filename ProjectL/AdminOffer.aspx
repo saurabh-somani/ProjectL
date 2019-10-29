@@ -17,6 +17,10 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <asp:Button ID="Button2" runat="server" Text="Back" OnClick="backClick" />
+    <br />
+    <br />
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
     <p>
@@ -30,7 +34,7 @@
                 <asp:TextBox ID="CompanyTB" runat="server" Width="160px"></asp:TextBox>
             </td>
             <td class="auto-style4">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="CompanyTB" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="CompanyTB" ErrorMessage="*" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -39,7 +43,7 @@
                 <asp:TextBox ID="RoleTB" runat="server" Width="160px"></asp:TextBox>
             </td>
             <td class="auto-style4">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="RoleTB" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="RoleTB" ErrorMessage="*" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -52,7 +56,7 @@
                 </asp:DropDownList>
             </td>
             <td class="auto-style4">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TypeDDL" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="TypeDDL" ErrorMessage="*" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -61,7 +65,7 @@
                 <asp:TextBox ID="DescriptionTB" runat="server" Width="160px"></asp:TextBox>
             </td>
             <td class="auto-style4">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="DescriptionTB" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator4" runat="server" ControlToValidate="DescriptionTB" ErrorMessage="*" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -70,7 +74,7 @@
                 <asp:TextBox ID="CompensationTB" runat="server" Width="160px" TextMode="Number"></asp:TextBox>
             </td>
             <td class="auto-style4">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="CompensationTB" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator5" runat="server" ControlToValidate="CompensationTB" ErrorMessage="*" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
@@ -79,7 +83,7 @@
                 <asp:TextBox ID="DeadlineTB" runat="server" TextMode="Date" Width="160px"></asp:TextBox>
             </td>
             <td class="auto-style4">
-                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="DeadlineTB" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+                <asp:RequiredFieldValidator ID="RequiredFieldValidator6" runat="server" ControlToValidate="DeadlineTB" ErrorMessage="*" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
             </td>
         </tr>
         <tr>
