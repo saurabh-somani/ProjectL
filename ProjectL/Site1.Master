@@ -16,9 +16,9 @@
             Header</div>
         
         <div class="LeftPanel">
-            <asp:Button ID="Button1" runat="server" Text="Logout" OnClick ="logout" CausesValidation="False" TabIndex="6" />
             <asp:ContentPlaceHolder ID="LeftContent" runat="server">
             </asp:ContentPlaceHolder>
+            <asp:Button ID="Button1" runat="server" Text="Logout" OnClick ="logout" CausesValidation="False" TabIndex="6" />
         </div>
         
         <div class="CenterPanel">

@@ -17,6 +17,10 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <asp:Button ID="Button1" runat="server" Text="Applied" Width="100px" onclick="Applied"/>
+    <br />
+    <asp:Button ID="Button2" runat="server" Text="Companies" Width="100px" onclick="Companies"/>
+    <br />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
     <h2><asp:Label ID="LCompany" runat="server" Text="Information"></asp:Label></h2>

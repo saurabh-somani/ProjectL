@@ -10,9 +10,10 @@ namespace ProjectL
 {
     public partial class InfoPage : System.Web.UI.Page
     {
+        string s;
         protected void Page_Load(object sender, EventArgs e)
         {
-            string s = Request.QueryString["OfferID"];
+            s = Request.QueryString["OfferID"];
             
             SqlConnection con = new SqlConnection();
             con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
@@ -53,25 +54,37 @@ namespace ProjectL
             con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
 
             SqlCommand com = new SqlCommand("INSERT INTO Applied (StudentID, OfferID) VALUES (@sid, @oid)", con);
-            com.Parameters.AddWithValue("@sid", Session["StudentID"]);
-            com.Parameters.AddWithValue("@oid", Request.QueryString["OfferID"]);
+            com.Parameters.AddWithValue("@sid", Session["user"].ToString());
+            com.Parameters.AddWithValue("@oid", s);
 
             try
             {
                 con.Open();
                 com.ExecuteNonQuery();
-            }
-            catch(Exception ex)
-            {
-                Response.Write("<script>alert(" + ex.ToString() + ")</script>");
-            }
-            finally
-            {
-                con.Close();
                 Label1.Visible = true;
                 Label1.Text = "Applied Successfully";
                 Apply.Enabled = false;
             }
+            catch (Exception ex)
+            {
+                Response.Write("<script>alert(" + ex.ToString() + ")</script>");
+                Label1.Visible = true;
+                Label1.Text = ex.ToString();
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
+        protected void Companies(object sender, EventArgs e)
+        {
+            Response.Redirect("StudentPage.aspx");
+        }
+
+        protected void Applied(object sender, EventArgs e)
+        {
+            ;
         }
     }
 }
