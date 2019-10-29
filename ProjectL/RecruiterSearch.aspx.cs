@@ -34,7 +34,7 @@ namespace ProjectL
                     //Label1.Text += "  " + d.Value;
                     if (count == 0)
                     {
-                        query += "AND ss.Skill = '" + d.Value + "'";
+                        query += "AND (ss.Skill = '" + d.Value + "'";
                         count++;
                     }
                     else
@@ -42,6 +42,11 @@ namespace ProjectL
                         query += " OR ss.Skill = '" + d.Value + "'";
                     }
                 }
+            }
+
+            if(count != 0)
+            {
+                query += ")";
             }
 
             SqlCommand com = new SqlCommand(query, con);
