@@ -1,10 +1,9 @@
-﻿html, body, form
-{
+﻿html, body, form {
     margin: 0;
+    background-color: #f5f5dc;
 }
 
-#CenterContent
-{
+#CenterContent {
     margin: 0;
     padding: 0;
 }

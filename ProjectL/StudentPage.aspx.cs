@@ -24,7 +24,7 @@ namespace ProjectL
             SqlCommand com = new SqlCommand("SELECT o.OfferID, Company, Deadline, Type FROM Offer o INNER JOIN Elg_Branch e ON o.OfferID = e.OfferID AND e.Branch = @b", con);
             com.Parameters.AddWithValue("@b", Session["Branch"].ToString());
             //SqlCommand com = new SqlCommand("SELECT Company, Deadline, Type FROM Offer", con);
-            Label1.Text = Session["Branch"].ToString();
+            //Label1.Text = Session["Branch"].ToString();
 
             try
             {
