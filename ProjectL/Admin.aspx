@@ -36,7 +36,7 @@
         </tr>
     </table>
     <br />
-    <asp:Button ID="Button1" runat="server" Text="Button" />
+    <asp:Button ID="Button1" runat="server" Text="Button" OnClick="Button1_Click" />
     <br />
     <asp:ValidationSummary ID="ValidationSummary1" runat="server" DisplayMode="List" ForeColor="Red" />
 </asp:Content>
