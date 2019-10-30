@@ -49,19 +49,14 @@ namespace ProjectL
                     rd.Close();
                     //cookies to store username
                     HttpCookie cookie = Request.Cookies["user"];
-                    if (cookie == null || cookie["admin"] == null)
+                    if (cookie == null)
                     {
                         cookie = new HttpCookie("user");
-                        cookie["admin"] = TextBox1.Text;
-                        cookie.Expires = DateTime.Now.AddDays(1);
-                        Response.Cookies.Add(cookie);
                     }
-                    else if (cookie["admin"] == null)
-                    {
-                        cookie["admin"] = TextBox1.Text;
-                        cookie.Expires = DateTime.Now.AddDays(1);
-                        Response.Cookies.Add(cookie);
-                    }
+                    cookie["admin"] = TextBox1.Text;
+                    cookie.Expires = DateTime.Now.AddDays(1);
+                    Response.Cookies.Add(cookie);
+                    
                     Response.Redirect("AdminDashboard.aspx");
                 }
                 else

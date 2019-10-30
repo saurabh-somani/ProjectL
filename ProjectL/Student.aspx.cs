@@ -59,16 +59,11 @@ namespace ProjectL
                     if(cookie==null)
                     {
                         cookie = new HttpCookie("user");
-                        cookie["student"] = TextBox1.Text;
-                        cookie.Expires = DateTime.Now.AddDays(1);
-                        Response.Cookies.Add(cookie);
                     }
-                    else if(cookie["student"] == null)
-                    {
-                        cookie["student"] = TextBox1.Text;
-                        cookie.Expires = DateTime.Now.AddDays(1);
-                        Response.Cookies.Add(cookie);
-                    }
+                    cookie["student"] = TextBox1.Text;
+                    cookie.Expires = DateTime.Now.AddDays(1);
+                    Response.Cookies.Add(cookie);
+
                     Response.Redirect("StudentPage.aspx");
                 }
                 else

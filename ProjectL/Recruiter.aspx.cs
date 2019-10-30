@@ -50,16 +50,10 @@ namespace ProjectL
                     if (cookie == null)
                     {
                         cookie = new HttpCookie("user");
-                        cookie["recruiter"] = TextBox1.Text;
-                        cookie.Expires = DateTime.Now.AddDays(1);
-                        Response.Cookies.Add(cookie);
                     }
-                    else if (cookie["recruiter"] == null)
-                    {
-                        cookie["recruiter"] = TextBox1.Text;
-                        cookie.Expires = DateTime.Now.AddDays(1);
-                        Response.Cookies.Add(cookie);
-                    }
+                    cookie["recruiter"] = TextBox1.Text;
+                    cookie.Expires = DateTime.Now.AddDays(1);
+                    Response.Cookies.Add(cookie);
 
                     Response.Redirect("RecruiterDashboard.aspx");
                 }

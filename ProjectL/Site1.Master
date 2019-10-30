@@ -22,7 +22,8 @@
         <div class="LeftPanel">
             <asp:ContentPlaceHolder ID="LeftContent" runat="server">
             </asp:ContentPlaceHolder>
-            <asp:Button Cssclass=Button ID="Button1" runat="server" Text="Logout" OnClick ="logout" CausesValidation="False" TabIndex="6" />
+            <asp:Button Cssclass=Button ID="MLog" runat="server" Text="Logout" OnClick ="logout" CausesValidation="False" TabIndex="6" />
+            
         </div>
         
         <div class="CenterPanel">

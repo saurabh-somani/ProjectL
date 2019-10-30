@@ -2,9 +2,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <asp:Button ID="Button2" runat="server" Text="Back" onclick="backclick"/>
+    <asp:Button ID="Button2" runat="server" Text="Back" onclick="backclick" CausesValidation="False"/>
     <br />
-
+    <br />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
     <p>
@@ -15,12 +15,13 @@
     <tr>
         <td class="auto-style2">Company:</td>
         <td class="auto-style3">
-            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Company" DataValueField="Company" Width="126px" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
+            <asp:DropDownList ID="DropDownList1" runat="server" DataSourceID="SqlDataSource1" DataTextField="Company" DataValueField="Company" Width="126px" AutoPostBack="True" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged" AppendDataBoundItems="true">
+                <asp:ListItem Text="" Value=""></asp:ListItem>
             </asp:DropDownList>
             <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:PlacementDB %>" SelectCommand="SELECT DISTINCT [Company] FROM [Company] ORDER BY [Company]" ProviderName="System.Data.SqlClient"></asp:SqlDataSource>
         </td>
         <td>
-            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownList1" ErrorMessage="RequiredFieldValidator"></asp:RequiredFieldValidator>
+            <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DropDownList1" ErrorMessage="Required" Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
         </td>
         <td>&nbsp;</td>
     </tr>
@@ -47,7 +48,7 @@
             <asp:TextBox ID="TextBox4" runat="server" TextMode="Number"></asp:TextBox>
         </td>
         <td>
-            <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox4" ErrorMessage="RangeValidator" MaximumValue="9999999999" MinimumValue="1000000000" Type="Double"></asp:RangeValidator>
+            <asp:RangeValidator ID="RangeValidator1" runat="server" ControlToValidate="TextBox4" ErrorMessage="Invalid number" MaximumValue="9999999999" MinimumValue="1000000000" Type="Double" Display="Dynamic" ForeColor="Red"></asp:RangeValidator>
         </td>
         <td>&nbsp;</td>
     </tr>

@@ -16,3 +16,6 @@
         <asp:Button ID="BStudent" runat="server" Text="Student" Width="100px" OnClick="BStudent_Click" />
     </p>
 </asp:Content>
+<asp:Content ID ="Content3" ContentPlaceHolderID="LeftContent" runat="server">
+
+</asp:Content>

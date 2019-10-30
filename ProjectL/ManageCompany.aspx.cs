@@ -20,7 +20,7 @@ namespace ProjectL
             con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
             SqlCommand com = null;
             String query = "";
-            if (TextBox2.Text != null)
+            if (!TextBox2.Text.Equals(""))
             {
                 query = "UPDATE Company SET ";
                 query += "SubType = @st ";
@@ -44,7 +44,7 @@ namespace ProjectL
                     con.Close();
                 }
             }
-            if (TextBox3.Text != null)
+            if (!TextBox3.Text.Equals(""))
             {
                 query = "UPDATE Company SET ";
                 query += "email = @e ";
@@ -68,7 +68,7 @@ namespace ProjectL
                     con.Close();
                 }
             }
-            if (TextBox4.Text != null)
+            if (!TextBox4.Text.Equals(""))
             {
                 query = "UPDATE Company SET ";
                 query += "phone = @p ";
@@ -81,6 +81,7 @@ namespace ProjectL
                 {
                     con.Open();
                     com.ExecuteNonQuery();
+                    Label1.Text = "Updated Successfully";
                 }
                 catch (Exception ex)
                 {
@@ -97,37 +98,45 @@ namespace ProjectL
         protected void Update_Click(object sender, EventArgs e)
         {
             UpdateQuery();
-            Label1.Text = "Updated Successfully";
         }
 
         protected void DropDownList1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
-            SqlCommand cmd = new SqlCommand();
-
-            try
+            if (DropDownList1.SelectedIndex != 0)
             {
-                con.Open();
-                cmd.CommandText = "SELECT * FROM Company WHERE Company= @Sel";
-                cmd.Parameters.AddWithValue("@Sel", DropDownList1.SelectedValue.ToString());
-                cmd.Connection = con;
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["PlacementDB"].ConnectionString;
+                SqlCommand cmd = new SqlCommand();
 
-                SqlDataReader rd = cmd.ExecuteReader();
-                rd.Read();
-                TextBox2.Text = rd["SubType"].ToString();
-                TextBox3.Text = rd["email"].ToString();
-                TextBox4.Text = rd["phone"].ToString();
+                try
+                {
+                    con.Open();
+                    cmd.CommandText = "SELECT * FROM Company WHERE Company= @Sel";
+                    cmd.Parameters.AddWithValue("@Sel", DropDownList1.SelectedValue.ToString());
+                    cmd.Connection = con;
 
-                rd.Close();
+                    SqlDataReader rd = cmd.ExecuteReader();
+                    rd.Read();
+                    TextBox2.Text = rd["SubType"].ToString();
+                    TextBox3.Text = rd["email"].ToString();
+                    TextBox4.Text = rd["phone"].ToString();
+
+                    rd.Close();
+                }
+                catch (Exception ex)
+                {
+                    Label1.Text = "Error " + ex.ToString();
+                }
+                finally
+                {
+                    con.Close();
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Label1.Text = "Error " + ex.ToString();
-            }
-            finally
-            {
-                con.Close();
+                TextBox2.Text = "";
+                TextBox3.Text = "";
+                TextBox4.Text = "";
             }
         }
 

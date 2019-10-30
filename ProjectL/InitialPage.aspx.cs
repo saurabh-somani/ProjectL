@@ -11,7 +11,11 @@ namespace ProjectL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if(!IsPostBack)
+            {
+                Button b = (Button)Page.Master.FindControl("MLog");
+                b.Visible = false;
+            }
         }
 
         protected void BRecruiter_Click(object sender, EventArgs e)

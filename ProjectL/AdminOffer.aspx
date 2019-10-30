@@ -17,7 +17,7 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
-    <asp:Button ID="Button2" runat="server" Text="Back" OnClick="backClick" />
+    <asp:Button ID="Button2" runat="server" Text="Back" OnClick="backClick" CausesValidation="False" />
     <br />
     <br />
 
