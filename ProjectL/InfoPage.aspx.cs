@@ -45,7 +45,28 @@ namespace ProjectL
                 con.Close();
             }
 
-            
+            SqlCommand com = new SqlCommand("SELECT StudentID FROM Applied WHERE OfferID = @oid AND StudentID = @sid", con);
+            com.Parameters.AddWithValue("@oid", LOfferID.Text);
+            com.Parameters.AddWithValue("@sid", Session["user"].ToString());
+
+            try
+            {
+                con.Open();
+                SqlDataReader rd = com.ExecuteReader();
+
+                if(rd.Read())
+                {
+                    Apply.Enabled = false;
+                }
+            }
+            catch(Exception ex)
+            {
+                Response.Write("<script>alert('" + ex.ToString() + "')</script>");
+            }
+            finally
+            {
+                con.Close();
+            }
         }
 
         protected void Apply_Click(object sender, EventArgs e)

@@ -9,6 +9,8 @@
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
     <br />
+    List of Companies:<br />
+    <br />
     <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AllowSorting="true" OnSelectedIndexChanged ="Info">
         <Columns>
             <asp:CommandField ShowSelectButton="True"/>
