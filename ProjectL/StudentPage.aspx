@@ -11,7 +11,7 @@
     <br />
     List of Companies:<br />
     <br />
-    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AllowSorting="true" OnSelectedIndexChanged ="Info">
+    <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" AllowSorting="true" OnSelectedIndexChanged ="Info" OnSorting="GV_OnSorting" EnablePersistedSelection="true">
         <Columns>
             <asp:CommandField ShowSelectButton="True"/>
             <asp:BoundField DataField ="OfferID" HeaderText ="OfferID" SortExpression ="OfferID" />
