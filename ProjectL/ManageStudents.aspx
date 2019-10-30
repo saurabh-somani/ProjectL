@@ -10,6 +10,10 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <asp:Button ID="Button3" runat="server" Text="Back" PostBackUrl="~/AdminDashboard.aspx" />
+    <br />
+    <br />
+
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
     <h2>Student Management</h2>

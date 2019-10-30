@@ -12,10 +12,13 @@ namespace ProjectL
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie cookie = Request.Cookies["user"];
-            if (cookie != null && cookie["recruiter"] != null)
+            if (!IsPostBack)
             {
-                TextBox1.Text = cookie["recruiter"].ToString();
+                HttpCookie cookie = Request.Cookies["user"];
+                if (cookie != null && cookie["recruiter"] != null)
+                {
+                    TextBox1.Text = cookie["recruiter"].ToString();
+                }
             }
         }
 

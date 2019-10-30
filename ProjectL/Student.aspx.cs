@@ -15,10 +15,13 @@ namespace ProjectL
         
         protected void Page_Load(object sender, EventArgs e)
         {
-            HttpCookie cookie = Request.Cookies["user"];
-            if(cookie !=null && cookie["student"]!=null)
+            if (!IsPostBack)
             {
-                TextBox1.Text = cookie["student"].ToString();
+                HttpCookie cookie = Request.Cookies["user"];
+                if (cookie != null && cookie["student"] != null)
+                {
+                    TextBox1.Text = cookie["student"].ToString();
+                }
             }
         }
 
@@ -71,6 +74,7 @@ namespace ProjectL
                 else
                 {
                     //Login fail
+                    Label1.Text = "Invalid password";
                     rd.Close();
                 }
                 
