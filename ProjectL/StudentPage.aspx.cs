@@ -104,7 +104,7 @@ namespace ProjectL
             catch (Exception ex)
             {
                 String s = ex.Message;
-                Response.Write("<script>alert('" + s + "')</script>");
+                //Response.Write("<script>alert('" + s + "')</script>");
             }
             finally
             {
