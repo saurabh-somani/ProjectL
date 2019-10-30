@@ -7,6 +7,9 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="LeftContent" runat="server">
+    <asp:Button ID="Button2" runat="server" Text="Back" PostBackUrl="~/RecruiterDashboard.aspx" />
+    <br />
+    <br />
 </asp:Content>
 <asp:Content ID="Content3" ContentPlaceHolderID="CenterContent" runat="server">
     <p>
